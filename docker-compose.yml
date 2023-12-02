@@ -3,7 +3,7 @@ services:
   app:
     image: golang:1.21.4
     container_name: ukrzaliznytsia
-    working_dir: /app/cmd
+    working_dir: /app
     volumes:
       - .:/app
-    command: go run .
+    command: go mod download && go run cmd/main.go
